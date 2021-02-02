@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Logowanie" Height="600" Width="800">
+
+
+
+    <Grid x:Name="Logowanie">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="44*"/>
+            <ColumnDefinition Width="247*"/>
+            <ColumnDefinition Width="448*"/>
+
+        </Grid.ColumnDefinitions>
+        <Label Content="Nazwa serwera" Grid.Column="5" HorizontalAlignment="Left" Margin="48.6,111,0,0" VerticalAlignment="Top" Height="50" Width="190" FontSize="20"/>
+        <Label Content="Baza danych" Grid.Column="5" HorizontalAlignment="Left" Margin="48.6,161,0,0" VerticalAlignment="Top" Height="50" Width="190" FontSize="20"/>
+        <Label Content="Nazwa użytkownika" Grid.Column="5" HorizontalAlignment="Left" Margin="48.6,216,0,0" VerticalAlignment="Top" Height="45" Width="190" FontSize="20"/>
+        <Label Content="Hasło użytkownika&#xD;&#xA;" Grid.Column="5" HorizontalAlignment="Left" Margin="48.6,266,0,0" VerticalAlignment="Top" Height="50" Width="190" FontSize="20"/>
+        <Button x:Name="Zaloguj" Content="Zaloguj" Grid.Column="6" HorizontalAlignment="Left" Margin="13.4,369,0,0" VerticalAlignment="Top" Width="161" Height="61" Click="Button_Click" FontSize="20"/>
+        <TextBox x:Name="Nservera" Grid.Column="6" HorizontalAlignment="Left" Height="50" Margin="13.4,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <TextBox x:Name="NazwaDB" Grid.Column="6" HorizontalAlignment="Left" Height="50" Margin="13.4,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <TextBox x:Name="Nużytkownika" Grid.Column="6" HorizontalAlignment="Left" Height="50" Margin="13.4,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <PasswordBox x:Name="Hużytkownika" Grid.Column="6" HorizontalAlignment="Left" Margin="13.4,261,0,0" VerticalAlignment="Top" Height="50
+                     " Width="190"/>
+
     </Grid>
 </Window>
