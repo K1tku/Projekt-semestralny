@@ -81,7 +81,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Okno.xaml">
+    <Page Include="Okna\Gry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Okna\Klienci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Okna\Okno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Okna\Pracownicy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Okna\Wypozyczenia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Okna\Zwroty.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -102,8 +122,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Okno.xaml.cs">
+    <Compile Include="Okna\Gry.xaml.cs">
+      <DependentUpon>Gry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Klienci.xaml.cs">
+      <DependentUpon>Klienci.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Okno.xaml.cs">
       <DependentUpon>Okno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Pracownicy.xaml.cs">
+      <DependentUpon>Pracownicy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Wypozyczenia.xaml.cs">
+      <DependentUpon>Wypozyczenia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Zwroty.xaml.cs">
+      <DependentUpon>Zwroty.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

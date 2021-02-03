@@ -1,0 +1,22 @@
+﻿<Window x:Class="Projekt.Okno"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekt"
+        mc:Ignorable="d"
+        Title="Okno" Height="457.111" Width="568.397">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="199*"/>
+            <ColumnDefinition Width="362*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="Gry" Content="Gry" HorizontalAlignment="Left" Margin="13.548,155,0,0" VerticalAlignment="Top" Width="150" Height="50" Grid.Column="1" Click="Gry_Click"/>
+        <Button x:Name="Prac" Content="Pracownicy" HorizontalAlignment="Left" Margin="13.548,84,0,0" VerticalAlignment="Top" Width="150" Height="52" Click="Button_Click" Grid.Column="1"/>
+        <Button x:Name="Klie" Content="Klienci" HorizontalAlignment="Left" Margin="13.548,222,0,0" VerticalAlignment="Top" Width="150" Height="50" Grid.Column="1" Click="Klie_Click"/>
+        <Button x:Name="Wypo" Content="Wypożyczenia" HorizontalAlignment="Left" Margin="13.548,288,0,0" VerticalAlignment="Top" Width="150" Height="50" Grid.Column="1" Click="Wypo_Click"/>
+        <Button x:Name="Zwro" Content="Zwroty" HorizontalAlignment="Left" Margin="13.548,353,0,0" VerticalAlignment="Top" Width="150" Height="50" Grid.Column="1" Click="Zwro_Click"/>
+        <Label Content="Jaką tabele chcesz zobaczyc?" HorizontalAlignment="Left" Margin="157,23,0,0" VerticalAlignment="Top" Height="56" Width="270" FontSize="20" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>

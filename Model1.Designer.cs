@@ -389,10 +389,15 @@ namespace Projekt
         partial void OnCena_dzienChanging(global::System.Int32 value);
         partial void OnCena_dzienChanged();
 
+        internal void ShowDialog()
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         #region Właściwości nawigacji
-    
+
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
         /// </summary>

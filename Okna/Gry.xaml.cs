@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Projekt
+namespace Projekt.Okna
 {
     /// <summary>
-    /// Logika interakcji dla klasy Okno.xaml
+    /// Logika interakcji dla klasy Gry.xaml
     /// </summary>
-    public partial class Okno : Window
+    public partial class Gry : Window
     {
-        public Okno()
+        public Gry()
         {
             InitializeComponent();
         }

@@ -1,11 +1,11 @@
-﻿<Window x:Class="Projekt.Okno"
+﻿<Window x:Class="Projekt.Okna.Wypozyczenia"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Projekt"
+        xmlns:local="clr-namespace:Projekt.Okna"
         mc:Ignorable="d"
-        Title="Okno" Height="450" Width="800">
+        Title="Wypozyczenia" Height="450" Width="800">
     <Grid>
         
     </Grid>

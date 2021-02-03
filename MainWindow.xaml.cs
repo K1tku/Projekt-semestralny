@@ -33,6 +33,7 @@ namespace Projekt
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             pobierzDane();
+            
         }
         
         public void pobierzDane()
@@ -49,24 +50,25 @@ namespace Projekt
             try
             {
                 polaczenie.Open();
-                var Okno = new Okno();
-                Okno.ShowDialog();
 
-                //using (SqlCommand cmdSel = new SqlCommand(sql, polaczenie))
-                //{
+                var w = Application.Current.Windows[0];
+                w.Hide();
 
-                //    DataTable dt = new DataTable();
+                Okno signIn = new Okno();
+                signIn.ShowDialog();
 
-                //    SqlDataAdapter da = new SqlDataAdapter(cmdSel);
-                //    da.Fill(dt);
+                //var Okno = new Okno();
+                //Okno.ShowDialog();
 
-                    
-                //}
+                
+                
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
                 MessageBox.Show("Błąd logowania");
             }
+            polaczenie.Close();
+            
 
         }
     }
