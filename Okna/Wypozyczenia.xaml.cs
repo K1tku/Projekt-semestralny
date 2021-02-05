@@ -43,7 +43,7 @@ namespace Projekt.Okna
             connection = new SqlConnection(connection_String); connection = new SqlConnection(connection_String);
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "SELECT ID_pracownika,Imie, Nazwisko, Data_urodzenia, Adres, Stanowisko from dbo.Pracownicy";
+            cmd.CommandText = "SELECT ID_wypozyczenia, ID_Gry, ID_pracownika, ID_klienta, Data_wypozyczenia from dbo.Wypozyczenia";
             cmd.CommandType = CommandType.Text;
             SqlDataReader dr = cmd.ExecuteReader();
             DataTable dt = new DataTable();
@@ -54,22 +54,79 @@ namespace Projekt.Okna
 
         private void dodaj_Click(object sender, RoutedEventArgs e)
         {
-
+            String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
+            string Query = "insert into Wypozyczenia (ID_wypozyczenia, ID_Gry, ID_pracownika, ID_klienta, Data_wypozyczenia) values('" + this.iD_wypozyczeniaTextBox.Text + "','" + this.iD_GryTextBox.Text + "','" + this.iD_pracownikaTextBox.Text + "','" + this.iD_klientaTextBox.Text + "','" + this.iD_wypozyczeniaTextBox.Text + "');";
+            SqlConnection conDataBase = new SqlConnection(connection_String);
+            SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
+            SqlDataReader myReader;
+            try
+            {
+                conDataBase.Open();
+                myReader = cmdDataBase.ExecuteReader();
+                System.Windows.MessageBox.Show("Zapisano");
+                while (myReader.Read()) { }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message);
+            }
         }
 
-        private void zapisz_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
 
         private void usun_Click(object sender, RoutedEventArgs e)
         {
+            String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
+            string Query = "delete from Wypozyczenia where ID_wypozyczenia='" + this.iD_wypozyczeniaTextBox.Text + "';";
+            SqlConnection conDataBase = new SqlConnection(connection_String);
+            SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
+            SqlDataReader myReader;
+            try
+            {
+                conDataBase.Open();
+                myReader = cmdDataBase.ExecuteReader();
+                System.Windows.MessageBox.Show("Zapisano");
+                while (myReader.Read()) { }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message);
+            }
 
         }
 
-        private void zapisz_Click(object sender, RoutedEventArgs e)
+        
+
+        private void uaktualnij_Click(object sender, RoutedEventArgs e)
         {
 
+            String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
+            string Query = "update Wypozyczenia set ID_wypozyczenia='" + this.iD_wypozyczeniaTextBox.Text + "',ID_Gry='" + this.iD_GryTextBox.Text + "',ID_pracownika='" + this.iD_pracownikaTextBox.Text + "',ID_klienta='" + this.iD_klientaTextBox.Text + "',ID_wypozyczenia='" + this.iD_wypozyczeniaTextBox.Text + "'where ID_wypozyczenia='" + this.iD_wypozyczeniaTextBox.Text + "';";
+            SqlConnection conDataBase = new SqlConnection(connection_String);
+            SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
+            SqlDataReader myReader;
+            try
+            {
+                conDataBase.Open();
+                myReader = cmdDataBase.ExecuteReader();
+                System.Windows.MessageBox.Show("Uaktualniono");
+                while (myReader.Read()) { }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            Projekt.Wypozyczalnia_Gier_komputerowychDataSet wypozyczalnia_Gier_komputerowychDataSet = ((Projekt.Wypozyczalnia_Gier_komputerowychDataSet)(this.FindResource("wypozyczalnia_Gier_komputerowychDataSet")));
+            // Załaduj dane do tabeli Wypozyczenia. Możesz modyfikować ten kod w razie potrzeby.
+            Projekt.Wypozyczalnia_Gier_komputerowychDataSetTableAdapters.WypozyczeniaTableAdapter wypozyczalnia_Gier_komputerowychDataSetWypozyczeniaTableAdapter = new Projekt.Wypozyczalnia_Gier_komputerowychDataSetTableAdapters.WypozyczeniaTableAdapter();
+            wypozyczalnia_Gier_komputerowychDataSetWypozyczeniaTableAdapter.Fill(wypozyczalnia_Gier_komputerowychDataSet.Wypozyczenia);
+            System.Windows.Data.CollectionViewSource wypozyczeniaViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("wypozyczeniaViewSource")));
+            wypozyczeniaViewSource.View.MoveCurrentToFirst();
         }
     }
 }

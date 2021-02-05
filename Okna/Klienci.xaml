@@ -1,16 +1,52 @@
-﻿<Window x:Class="Projekt.Okna.Klienci"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt.Okna"
+        xmlns:Projekt="clr-namespace:Projekt" x:Class="Projekt.Okna.Klienci"
         mc:Ignorable="d"
-        Title="Klienci" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name="DataGridKli" HorizontalAlignment="Left" Height="177" Margin="10,10,0,0" VerticalAlignment="Top" Width="774" Loaded="DataGridKli_Loaded" SelectionChanged="DataGridKli_SelectionChanged"/>
-        <Button x:Name="dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="80,302,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="dodaj_Click"/>
-        <Button x:Name="zapisz" Content="Zapisz" HorizontalAlignment="Left" Margin="337,302,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="zapisz_Click"/>
-        <Button x:Name="usun" Content="Usuń" HorizontalAlignment="Left" Margin="576,302,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="usun_Click"/>
+        Title="Klienci" Height="582" Width="1072.4" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Projekt:Wypozyczalnia_Gier_komputerowychDataSet x:Key="wypozyczalnia_Gier_komputerowychDataSet"/>
+        <CollectionViewSource x:Key="klienciViewSource" Source="{Binding Klienci, Source={StaticResource wypozyczalnia_Gier_komputerowychDataSet}}"/>
+    </Window.Resources>
+    <Grid Margin="0,0,3.6,12">
+        <DataGrid x:Name="DataGridKli" HorizontalAlignment="Left" Height="177" Margin="278,63,0,0" VerticalAlignment="Top" Width="774" Loaded="DataGridKli_Loaded" SelectionChanged="DataGridKli_SelectionChanged"/>
+        <Button x:Name="dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="51,302,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="dodaj_Click"/>
+        <Button x:Name="Uaktualnij" Content="Uaktualnij" HorizontalAlignment="Left" Margin="51,463,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="uaktualnij_Click"/>
+        <Button x:Name="usun" Content="Usuń" HorizontalAlignment="Left" Margin="51,381,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="usun_Click"/>
+
+        <Grid x:Name="grid1" DataContext="{StaticResource klienciViewSource}" HorizontalAlignment="Left" Margin="33,63,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15.7"/>
+                <ColumnDefinition Width="83.5"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="ID klienta:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="0" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="iD_klientaTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="2.8,4,0,4" Grid.Row="0" Text="{Binding ID_klienta, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Nazwisko:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="1" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="nazwiskoTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="2.8,4,0,4" Grid.Row="1" Text="{Binding Nazwisko, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Imie:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="2" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="imieTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="2.8,4,0,4" Grid.Row="2" Text="{Binding Imie, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Adres:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="3" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="adresTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="2.8,4,0,4" Grid.Row="3" Text="{Binding Adres, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Kod pocztowy:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="4" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="kod_pocztowyTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="2.8,4,0,4" Grid.Row="4" Text="{Binding Kod_pocztowy, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Data urodzenia:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="5" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <DatePicker x:Name="data_urodzeniaDatePicker" Grid.Column="2" HorizontalAlignment="Left" Margin="2.8,4,0,4" Grid.Row="5" SelectedDate="{Binding Data_urodzenia, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
+            <Label Content="Numer DO:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="6" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="numer_DOTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="2.8,4,0,4" Grid.Row="6" Text="{Binding Numer_DO, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
 
     </Grid>
 </Window>

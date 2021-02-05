@@ -43,7 +43,7 @@ namespace Projekt.Okna
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             //zapytanie sql
-            cmd.CommandText = "SELECT ID_pracownika,Imie, Nazwisko, Data_urodzenia, Adres, Stanowisko from dbo.Pracownicy";
+            cmd.CommandText = "SELECT ID_wypozyczenia, ID_pracownika, data_zwrotu, doplaty from dbo.Zwroty";
             cmd.CommandType = CommandType.Text;
             SqlDataReader dr = cmd.ExecuteReader();
             DataTable dt = new DataTable();
@@ -54,16 +54,65 @@ namespace Projekt.Okna
 
         private void dodaj_Click(object sender, RoutedEventArgs e)
         {
+            String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
+            string Query = "insert into Zwroty (ID_wypozyczenia, ID_pracownika, data_zwrotu, doplaty) values('" + this.iD_wypozyczeniaTextBox.Text + "','" + this.iD_pracownikaTextBox.Text + "','" + this.data_zwrotuDatePicker.Text + "','" + this.doplatyTextBox.Text + "' );";
+            SqlConnection conDataBase = new SqlConnection(connection_String);
+            SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
+            SqlDataReader myReader;
+            try
+            {
+                conDataBase.Open();
+                myReader = cmdDataBase.ExecuteReader();
+                System.Windows.MessageBox.Show("Zapisano");
+                while (myReader.Read()) { }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message);
+            }
 
         }
 
-        private void zapisz_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
 
         private void usun_Click(object sender, RoutedEventArgs e)
         {
+            String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
+            string Query = "delete from Zwroty  where ID_wypozyczenia='" + this.iD_wypozyczeniaTextBox.Text + "';";
+            SqlConnection conDataBase = new SqlConnection(connection_String);
+            SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
+            SqlDataReader myReader;
+            try
+            {
+                conDataBase.Open();
+                myReader = cmdDataBase.ExecuteReader();
+                System.Windows.MessageBox.Show("Zapisano");
+                while (myReader.Read()) { }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void uaktualnij_Click(object sender, RoutedEventArgs e)
+        {
+            String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
+            string Query = "update Zwroty set ID_wypozyczenia='" + this.iD_wypozyczeniaTextBox.Text + "',ID_pracownika='" + this.iD_pracownikaTextBox.Text + "',data_zwrotu='" + this.data_zwrotuDatePicker.Text + "',doplaty='" + this.doplatyTextBox.Text + "' whereID_wypozyczenia='" + this.iD_wypozyczeniaTextBox.Text + "';";
+            SqlConnection conDataBase = new SqlConnection(connection_String);
+            SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
+            SqlDataReader myReader;
+            try
+            {
+                conDataBase.Open();
+                myReader = cmdDataBase.ExecuteReader();
+                System.Windows.MessageBox.Show("Uaktualniono");
+                while (myReader.Read()) { }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message);
+            }
 
         }
     }

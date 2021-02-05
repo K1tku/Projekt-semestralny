@@ -1,13 +1,18 @@
-﻿<Window x:Class="Projekt.Okna.Wypozyczenia"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt.Okna"
+        xmlns:Projekt="clr-namespace:Projekt" x:Class="Projekt.Okna.Wypozyczenia"
         mc:Ignorable="d"
-        Title="Wypozyczenia" Height="450" Width="800">
+        Title="Wypozyczenia" Height="598" Width="1100.8" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Projekt:Wypozyczalnia_Gier_komputerowychDataSet x:Key="wypozyczalnia_Gier_komputerowychDataSet"/>
+        <CollectionViewSource x:Key="wypozyczeniaViewSource" Source="{Binding Wypozyczenia, Source={StaticResource wypozyczalnia_Gier_komputerowychDataSet}}"/>
+    </Window.Resources>
     <Grid>
-        <DataGrid x:Name="DataGridWy" HorizontalAlignment="Left" Height="150" Margin="7,10,0,0" VerticalAlignment="Top" Width="779" RenderTransformOrigin="0.5,0.5" SelectionChanged="DataGridWy_SelectionChanged" Loaded="DataGridWy_Loaded">
+        <DataGrid x:Name="DataGridWy" HorizontalAlignment="Left" Height="150" Margin="285,53,0,0" VerticalAlignment="Top" Width="779" RenderTransformOrigin="0.5,0.5" SelectionChanged="DataGridWy_SelectionChanged" Loaded="DataGridWy_Loaded">
             <DataGrid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -17,9 +22,34 @@
                 </TransformGroup>
             </DataGrid.RenderTransform>
         </DataGrid>
-        <Button x:Name="dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="107,286,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="dodaj_Click"/>
-        <Button x:Name="zapisz" Content="Zapisz" HorizontalAlignment="Left" Margin="350,286,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="zapisz_Click"/>
-        <Button x:Name="usun" Content="Usuń" HorizontalAlignment="Left" Margin="595,286,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="usun_Click"/>
+        <Button x:Name="dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="75,286,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="dodaj_Click"/>
+        <Button x:Name="uaktualnij" Content="Uaktualnij" HorizontalAlignment="Left" Margin="75,436,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="uaktualnij_Click"/>
+        <Button x:Name="usun" Content="Usuń" HorizontalAlignment="Left" Margin="75,360,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="usun_Click"/>
+
+        <Grid x:Name="grid1" DataContext="{StaticResource wypozyczeniaViewSource}" HorizontalAlignment="Left" Margin="10,54,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="ID wypozyczenia:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="0" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="iD_wypozyczeniaTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="3,4,0,4" Grid.Row="0" Text="{Binding ID_wypozyczenia, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="ID Gry:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="1" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="iD_GryTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="3,4,0,4" Grid.Row="1" Text="{Binding ID_Gry, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="ID pracownika:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="2" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="iD_pracownikaTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="3,4,0,4" Grid.Row="2" Text="{Binding ID_pracownika, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="ID klienta:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="3" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="iD_klientaTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="3,4,0,4" Grid.Row="3" Text="{Binding ID_klienta, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Data wypozyczenia:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="4" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <DatePicker x:Name="data_wypozyczeniaDatePicker" Grid.Column="2" HorizontalAlignment="Left" Margin="3,4,0,4" Grid.Row="4" SelectedDate="{Binding Data_wypozyczenia, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
+        </Grid>
 
     </Grid>
 </Window>
