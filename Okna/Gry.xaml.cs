@@ -54,6 +54,19 @@ namespace Projekt.Okna
             dr.Close();
         }
 
-        
+        private void Dodaj_Click(object sender, RoutedEventArgs e)
+        {
+            // Create a new row.
+            GryDataSet.RegionRow newRegionRow;
+            newRegionRow = GryDataSet.Region.NewRegionRow();
+            newRegionRow.RegionID = 5;
+            newRegionRow.RegionDescription = "NorthWestern";
+
+            // Add the row to the Region table
+            this.northwindDataSet.Region.Rows.Add(newRegionRow);
+
+            // Save the new row to the database
+            this.regionTableAdapter.Update(this.northwindDataSet.Region);
+        }
     }
 }
