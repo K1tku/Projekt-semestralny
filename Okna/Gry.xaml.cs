@@ -20,7 +20,7 @@ namespace Projekt.Okna
     /// Logika interakcji dla klasy Gry.xaml
     /// </summary>
     public partial class Gry : Window
-    {
+    {  //łącznie z baza danych
         public String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
         public SqlConnection connection;
         public Gry()
@@ -42,6 +42,7 @@ namespace Projekt.Okna
 
         private void updateDataGrid()
         {
+            //pobieranie danych z bazy i wyswietlenie w DataGrid
             connection = new SqlConnection(connection_String); connection = new SqlConnection(connection_String);
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
@@ -56,17 +57,7 @@ namespace Projekt.Okna
 
         private void Dodaj_Click(object sender, RoutedEventArgs e)
         {
-            // Create a new row.
-            GryDataSet.RegionRow newRegionRow;
-            newRegionRow = GryDataSet.Region.NewRegionRow();
-            newRegionRow.RegionID = 5;
-            newRegionRow.RegionDescription = "NorthWestern";
-
-            // Add the row to the Region table
-            this.northwindDataSet.Region.Rows.Add(newRegionRow);
-
-            // Save the new row to the database
-            this.regionTableAdapter.Update(this.northwindDataSet.Region);
+            
         }
     }
 }

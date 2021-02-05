@@ -45,21 +45,20 @@ namespace Projekt
                 "PASSWORD=" + Hużytkownika.Password + ";";
 
             SqlConnection polaczenie = new SqlConnection(mojePolaczenie);
-
+            //Sprawdzenie czy dane są poprawne i zalogowanie bądź wyłapanie błedu i wyrzucenie komunikatu
             try
-            {
+            {    
+                //otwarcie połaczenia
                 polaczenie.Open();
-
+                //pokazanie nastepnego okna i zamknięcie poprzedniego
                 var w = Application.Current.Windows[0];
                 w.Hide();
-
+                
                 Okno signIn = new Okno();
                 signIn.ShowDialog();
                 w.Show();
 
-                //var Okno = new Okno();
-                //Okno.ShowDialog();
-
+                
 
 
             }

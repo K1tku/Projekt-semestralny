@@ -21,6 +21,8 @@ namespace Projekt.Okna
     /// </summary>
     public partial class Klienci : Window
     {
+
+        //łączenie z baza danych
         public String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
         public SqlConnection connection;
         public Klienci()
@@ -39,9 +41,11 @@ namespace Projekt.Okna
         }
         private void updateDataGrid()
         {
+            //pobieranie danych z bazy i wyswietlenie w DataGrid
             connection = new SqlConnection(connection_String); connection = new SqlConnection(connection_String);
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
+            //zapytanie "Select"
             cmd.CommandText = "SELECT ID_klienta, Nazwisko, Imie, Adres, Kod_pocztowy, Data_urodzenia, Numer_DO from dbo.Klienci";
             cmd.CommandType = CommandType.Text;
             SqlDataReader dr = cmd.ExecuteReader();
