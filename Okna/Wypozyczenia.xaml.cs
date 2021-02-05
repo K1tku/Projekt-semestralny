@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Data;
+
 
 namespace Projekt.Okna
 {
@@ -22,6 +25,11 @@ namespace Projekt.Okna
         public Wypozyczenia()
         {
             InitializeComponent();
+        }
+
+        private void DataGridWy_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }

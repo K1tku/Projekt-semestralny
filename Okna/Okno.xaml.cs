@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Projekt
 {
@@ -19,38 +21,134 @@ namespace Projekt
     /// </summary>
     public partial class Okno : Window
     {
+        private const String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
+        private SqlConnection connection;
         public Okno()
         {
             InitializeComponent();
-            
-         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        }
+
+        private void Prac_Click(object sender, RoutedEventArgs e)
         {
-            
+
+            connection = new SqlConnection(connection_String);
+
+            try
+            {
+                connection.Open();
+                var w = Application.Current.Windows[1];
+                w.Hide();
+
+                Okna.Pracownicy signIn = new Okna.Pracownicy();
+                signIn.ShowDialog();
+                w.Show();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Błąd logowania");
+            }
+            connection.Close();
+
 
         }
 
         private void Gry_Click(object sender, RoutedEventArgs e)
         {
-            
+            connection = new SqlConnection(connection_String);
+
+            try
+            {
+                connection.Open();
+                var w = Application.Current.Windows[1];
+                w.Hide();
+
+                Okna.Gry signIn = new Okna.Gry();
+                signIn.ShowDialog();
+                w.Show();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Błąd logowania");
+            }
+            connection.Close();
+
 
         }
 
         private void Klie_Click(object sender, RoutedEventArgs e)
         {
-            
+            connection = new SqlConnection(connection_String);
+
+            try
+            {
+                connection.Open();
+                var w = Application.Current.Windows[1];
+                w.Hide();
+
+                Okna.Klienci signIn = new Okna.Klienci();
+                signIn.ShowDialog();
+                w.Show();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Błąd logowania");
+            }
+            connection.Close();
+
 
         }
 
         private void Wypo_Click(object sender, RoutedEventArgs e)
         {
+            connection = new SqlConnection(connection_String);
+
+            try
+            {
+                connection.Open();
+                var w = Application.Current.Windows[1];
+                w.Hide();
+
+                Okna.Wypozyczenia signIn = new Okna.Wypozyczenia();
+                signIn.ShowDialog();
+                w.Show();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Błąd logowania");
+            }
+            connection.Close();
+
 
         }
 
         private void Zwro_Click(object sender, RoutedEventArgs e)
         {
+            connection = new SqlConnection(connection_String);
+
+            try
+            {
+                connection.Open();
+                var w = Application.Current.Windows[1];
+                w.Hide();
+
+                Okna.Zwroty signIn = new Okna.Zwroty();
+                signIn.ShowDialog();
+                w.Show();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Błąd logowania");
+            }
+            connection.Close();
+
 
         }
+
+
+    
+
+
     }
 }
+

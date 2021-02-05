@@ -389,10 +389,7 @@ namespace Projekt
         partial void OnCena_dzienChanging(global::System.Int32 value);
         partial void OnCena_dzienChanged();
 
-        internal void ShowDialog()
-        {
-            throw new NotImplementedException();
-        }
+        
 
         #endregion
 
@@ -844,10 +841,12 @@ namespace Projekt
         partial void OnStanowiskoChanging(global::System.String value);
         partial void OnStanowiskoChanged();
 
+        
+
         #endregion
 
         #region Właściwości nawigacji
-    
+
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
         /// </summary>

@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="Wypozyczenia" Height="450" Width="800">
     <Grid>
-        
+        <DataGrid x:Name="DataGridWy" HorizontalAlignment="Left" Height="406" Margin="347,10,0,0" VerticalAlignment="Top" Width="444" RenderTransformOrigin="0.5,0.5" SelectionChanged="DataGridWy_SelectionChanged">
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.13"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+        </DataGrid>
+
     </Grid>
 </Window>

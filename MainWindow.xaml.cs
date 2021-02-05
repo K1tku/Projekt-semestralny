@@ -40,8 +40,7 @@ namespace Projekt
         {
             //pobierz dane logowania z formularza i przypisz
             string mojePolaczenie =
-                "SERVER=" + Nservera.Text + ";" +
-                "DATABASE=" + NazwaDB.Text + ";" +
+               
                 "UID=" + Nużytkownika.Text + ";" +
                 "PASSWORD=" + Hużytkownika.Password + ";";
 
@@ -56,18 +55,19 @@ namespace Projekt
 
                 Okno signIn = new Okno();
                 signIn.ShowDialog();
+                w.Show();
 
                 //var Okno = new Okno();
                 //Okno.ShowDialog();
 
-                
-                
+
+
             }
             catch (SqlException )
             {
                 MessageBox.Show("Błąd logowania");
             }
-            polaczenie.Close();
+           
             
 
         }

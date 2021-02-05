@@ -69,6 +69,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Wypozyczalnia_Gier_komputerowychDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Wypozyczalnia_Gier_komputerowychDataSet.xsd</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -131,7 +136,7 @@
     <Compile Include="Okna\Okno.xaml.cs">
       <DependentUpon>Okno.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Okna\Pracownicy.xaml.cs">
+    <Compile Include="Okna\Pracownicy.cs">
       <DependentUpon>Pracownicy.xaml</DependentUpon>
     </Compile>
     <Compile Include="Okna\Wypozyczenia.xaml.cs">
@@ -165,10 +170,20 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\Klienci.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Wypozyczalnia_Gier_komputerowychDataSet.xsc">
+      <DependentUpon>Wypozyczalnia_Gier_komputerowychDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Wypozyczalnia_Gier_komputerowychDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Wypozyczalnia_Gier_komputerowychDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Wypozyczalnia_Gier_komputerowychDataSet.xss">
+      <DependentUpon>Wypozyczalnia_Gier_komputerowychDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -186,6 +201,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

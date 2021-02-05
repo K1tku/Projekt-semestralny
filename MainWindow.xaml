@@ -5,33 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt"
         mc:Ignorable="d"
-        Title="Logowanie" Height="600" Width="800">
+        Title="Logowanie" Height="603.2" Width="806.4">
 
 
 
-    <Grid x:Name="Logowanie">
+    <Grid x:Name="Logowanie" Margin="0,10,196.6,115.4">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
-            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="10*"/>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition Width="43*"/>
+            <ColumnDefinition Width="55*"/>
+            <ColumnDefinition Width="315*"/>
             <ColumnDefinition Width="0*"/>
-            <ColumnDefinition Width="290*"/>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition Width="450*"/>
+            <ColumnDefinition Width="370*"/>
 
         </Grid.ColumnDefinitions>
-        <Label Content="Nazwa serwera" Grid.Column="5" HorizontalAlignment="Left" Margin="47.6,111,0,0" VerticalAlignment="Top" Height="50" Width="190" FontSize="20"/>
-        <Label Content="Baza danych" Grid.Column="5" HorizontalAlignment="Left" Margin="47.6,161,0,0" VerticalAlignment="Top" Height="50" Width="190" FontSize="20"/>
-        <Label Content="Nazwa użytkownika" Grid.Column="5" HorizontalAlignment="Left" Margin="47.6,216,0,0" VerticalAlignment="Top" Height="45" Width="190" FontSize="20"/>
-        <Label Content="Hasło użytkownika&#xD;&#xA;" Grid.Column="5" HorizontalAlignment="Left" Margin="47.6,266,0,0" VerticalAlignment="Top" Height="50" Width="190" FontSize="20"/>
-        <Button x:Name="Zaloguj" Content="Zaloguj" Grid.Column="7" HorizontalAlignment="Left" Margin="1,369,0,0" VerticalAlignment="Top" Width="161" Height="61" Click="Button_Click" FontSize="20"/>
-        <TextBox x:Name="Nservera" Grid.Column="7" HorizontalAlignment="Left" Height="50" Margin="1,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
-        <TextBox x:Name="NazwaDB" Grid.Column="7" HorizontalAlignment="Left" Height="50" Margin="1,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
-        <TextBox x:Name="Nużytkownika" Grid.Column="7" HorizontalAlignment="Left" Height="50" Margin="1,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
-        <PasswordBox x:Name="Hużytkownika" Grid.Column="7" HorizontalAlignment="Left" Margin="1,261,0,0" VerticalAlignment="Top" Height="50
+        <Label Content="Nazwa użytkownika" Grid.Column="5" HorizontalAlignment="Left" Margin="49,216,0,0" VerticalAlignment="Top" Height="45" Width="190" FontSize="20"/>
+        <Label Content="Hasło użytkownika&#xD;&#xA;" Grid.Column="5" HorizontalAlignment="Left" Margin="49,266,0,0" VerticalAlignment="Top" Height="50" Width="190" FontSize="20"/>
+        <Button x:Name="Zaloguj" Content="Zaloguj" Grid.Column="7" HorizontalAlignment="Left" Margin="3.8,369,0,0" VerticalAlignment="Top" Width="161" Height="61" Click="Button_Click" FontSize="20"/>
+        <TextBox x:Name="Nużytkownika" Grid.Column="7" HorizontalAlignment="Left" Height="50" Margin="3.8,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <PasswordBox x:Name="Hużytkownika" Grid.Column="7" HorizontalAlignment="Left" Margin="3.8,261,0,0" VerticalAlignment="Top" Height="50
                      " Width="190"/>
+        <Label Content="Zaloguj się!" Grid.Column="5" HorizontalAlignment="Left" Margin="180,28,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="50" Width="232" FontSize="30"/>
 
     </Grid>
 </Window>

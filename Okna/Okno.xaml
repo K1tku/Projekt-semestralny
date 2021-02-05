@@ -12,7 +12,7 @@
             <ColumnDefinition Width="362*"/>
         </Grid.ColumnDefinitions>
         <Button x:Name="Gry" Content="Gry" HorizontalAlignment="Left" Margin="13.548,155,0,0" VerticalAlignment="Top" Width="150" Height="50" Grid.Column="1" Click="Gry_Click"/>
-        <Button x:Name="Prac" Content="Pracownicy" HorizontalAlignment="Left" Margin="13.548,84,0,0" VerticalAlignment="Top" Width="150" Height="52" Click="Button_Click" Grid.Column="1"/>
+        <Button x:Name="Prac" Content="Pracownicy" HorizontalAlignment="Left" Margin="12.8,84,0,0" VerticalAlignment="Top" Width="150" Height="52" Grid.Column="1" Click="Prac_Click"/>
         <Button x:Name="Klie" Content="Klienci" HorizontalAlignment="Left" Margin="13.548,222,0,0" VerticalAlignment="Top" Width="150" Height="50" Grid.Column="1" Click="Klie_Click"/>
         <Button x:Name="Wypo" Content="Wypożyczenia" HorizontalAlignment="Left" Margin="13.548,288,0,0" VerticalAlignment="Top" Width="150" Height="50" Grid.Column="1" Click="Wypo_Click"/>
         <Button x:Name="Zwro" Content="Zwroty" HorizontalAlignment="Left" Margin="13.548,353,0,0" VerticalAlignment="Top" Width="150" Height="50" Grid.Column="1" Click="Zwro_Click"/>
