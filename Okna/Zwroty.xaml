@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Zwroty" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="DataGridZwroty" HorizontalAlignment="Left" Height="420" Margin="434,0,-0.4,0" VerticalAlignment="Top" Width="360"/>
+        <DataGrid x:Name="DataGridZwroty" HorizontalAlignment="Left" Height="170" Margin="10,10,0,0" VerticalAlignment="Top" Width="774" SelectionChanged="DataGridZwroty_SelectionChanged" Loaded="DataGridZwroty_Loaded"/>
 
     </Grid>
 </Window>

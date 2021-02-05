@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Klienci" Height="450" Width="800">
     <Grid>
-        
+        <DataGrid x:Name="DataGridKli" HorizontalAlignment="Left" Height="177" Margin="10,10,0,0" VerticalAlignment="Top" Width="774" Loaded="DataGridKli_Loaded" SelectionChanged="DataGridKli_SelectionChanged"/>
+
     </Grid>
 </Window>

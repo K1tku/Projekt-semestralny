@@ -45,7 +45,7 @@ namespace Projekt.Okna
         {connection = new SqlConnection(connection_String);connection = new SqlConnection(connection_String);
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "SELECT Imie, Nazwisko from dbo.Pracownicy";
+            cmd.CommandText = "SELECT ID_pracownika,Imie, Nazwisko, Data_urodzenia, Adres, Stanowisko from dbo.Pracownicy";
             cmd.CommandType = CommandType.Text;
             SqlDataReader dr = cmd.ExecuteReader();
             DataTable dt = new DataTable();

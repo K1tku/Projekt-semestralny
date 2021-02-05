@@ -45,7 +45,7 @@ namespace Projekt.Okna
             connection = new SqlConnection(connection_String); connection = new SqlConnection(connection_String);
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "SELECT ID_gry, Nazwa, Kategoria, Kategoria_wiekowa, Data_wydania, Cena_dzień from dbo.Gry";
+            cmd.CommandText = "SELECT ID_gry, Nazwa, Kategoria, Kategoria_wiekowa, Data_wydania, Cena_dzien from dbo.Gry";
             cmd.CommandType = CommandType.Text;
             SqlDataReader dr = cmd.ExecuteReader();
             DataTable dt = new DataTable();
@@ -54,9 +54,6 @@ namespace Projekt.Okna
             dr.Close();
         }
 
-        private void DataGridGry_Loaded_1(object sender, RoutedEventArgs e)
-        {
-            updateDataGrid();
-        }
+        
     }
 }

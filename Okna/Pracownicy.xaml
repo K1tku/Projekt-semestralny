@@ -11,12 +11,12 @@
             <ColumnDefinition Width="322*"/>
             <ColumnDefinition Width="471*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="DataGridPrac" HorizontalAlignment="Left" Height="419" Margin="70.636,-1,0,0" VerticalAlignment="Top" Width="397" RenderTransformOrigin="0.5,0.5" SelectionChanged="DataGridPrac_SelectionChanged" Grid.Column="1" Loaded="DataGridPrac_Loaded">
+        <DataGrid x:Name="DataGridPrac" HorizontalAlignment="Left" Height="374" Margin="12,13,0,0" VerticalAlignment="Top" Width="751" RenderTransformOrigin="0.5,0.5" SelectionChanged="DataGridPrac_SelectionChanged" Loaded="DataGridPrac_Loaded" Grid.ColumnSpan="2">
             <DataGrid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="0.703"/>
+                    <RotateTransform Angle="0.094"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </DataGrid.RenderTransform>
