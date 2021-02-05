@@ -54,5 +54,20 @@ namespace Projekt.Okna
             DataGridKli.ItemsSource = dt.DefaultView;
             dr.Close();
         }
+
+        private void dodaj_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void zapisz_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void usun_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

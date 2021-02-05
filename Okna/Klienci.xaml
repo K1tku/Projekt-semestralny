@@ -8,6 +8,9 @@
         Title="Klienci" Height="450" Width="800">
     <Grid>
         <DataGrid x:Name="DataGridKli" HorizontalAlignment="Left" Height="177" Margin="10,10,0,0" VerticalAlignment="Top" Width="774" Loaded="DataGridKli_Loaded" SelectionChanged="DataGridKli_SelectionChanged"/>
+        <Button x:Name="dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="80,302,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="dodaj_Click"/>
+        <Button x:Name="zapisz" Content="Zapisz" HorizontalAlignment="Left" Margin="337,302,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="zapisz_Click"/>
+        <Button x:Name="usun" Content="Usuń" HorizontalAlignment="Left" Margin="576,302,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="usun_Click"/>
 
     </Grid>
 </Window>

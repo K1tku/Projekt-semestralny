@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Projekt.Okna
 {
@@ -26,7 +27,7 @@ namespace Projekt.Okna
         public Gry()
         {
             InitializeComponent();
-            
+
         }
 
 
@@ -57,7 +58,65 @@ namespace Projekt.Okna
 
         private void Dodaj_Click(object sender, RoutedEventArgs e)
         {
-            
+            String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
+            string Query = "insert into Gry (ID_gry, Nazwa, Kategoria, Kategoria_wiekowa, Data_wydania, Cena_dzien) values('" + this.iD_gryTextBox.Text + "','" + this.nazwaTextBox.Text + "','" + this.kategoriaTextBox.Text + "','" + this.kategoria_wiekowaTextBox.Text + "','" + this.data_wydaniaTextBox.Text + "','" + this.cena_dzienTextBox.Text + "');" ;
+            SqlConnection conDataBase = new SqlConnection(connection_String);
+            SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
+            SqlDataReader myReader;
+            try
+            {
+                conDataBase.Open();
+                myReader = cmdDataBase.ExecuteReader();
+                System.Windows.MessageBox.Show("Zapisano");
+                while (myReader.Read()) { }
+            }
+            catch(Exception ex)
+            {
+               System.Windows.MessageBox.Show(ex.Message);
+            }
+                }
+     
+        
+
+        private void usun_Click(object sender, RoutedEventArgs e)
+        {
+            String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
+            string Query = "delete from Gry where ID_gry='" + this.iD_gryTextBox.Text + "';";
+            SqlConnection conDataBase = new SqlConnection(connection_String);
+            SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
+            SqlDataReader myReader;
+            try
+            {
+                conDataBase.Open();
+                myReader = cmdDataBase.ExecuteReader();
+                System.Windows.MessageBox.Show("Zapisano");
+                while (myReader.Read()) { }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void uaktualnij_Click(object sender, RoutedEventArgs e)
+        {
+            String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
+            string Query = "update Gry set ID_gry='" + this.iD_gryTextBox.Text + "', Nazwa='" + this.nazwaTextBox.Text + "',Kategoria='" + this.kategoriaTextBox.Text + "',Kategoria_wiekowa='" + this.kategoria_wiekowaTextBox.Text + "',Data_wydania='" + this.data_wydaniaTextBox.Text + "',Cena_dzien='" + this.cena_dzienTextBox.Text + "'where ID_gry='" + this.iD_gryTextBox.Text + "'; ";
+            SqlConnection conDataBase = new SqlConnection(connection_String);
+            SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
+            SqlDataReader myReader;
+            try
+            {
+                conDataBase.Open();
+                myReader = cmdDataBase.ExecuteReader();
+                System.Windows.MessageBox.Show("Uaktualniono");
+                while (myReader.Read()) { }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -17,6 +17,9 @@
                 </TransformGroup>
             </DataGrid.RenderTransform>
         </DataGrid>
+        <Button x:Name="dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="107,286,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="dodaj_Click"/>
+        <Button x:Name="zapisz" Content="Zapisz" HorizontalAlignment="Left" Margin="350,286,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="zapisz_Click"/>
+        <Button x:Name="usun" Content="Usuń" HorizontalAlignment="Left" Margin="595,286,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="usun_Click"/>
 
     </Grid>
 </Window>

@@ -1,14 +1,48 @@
-﻿<Window x:Class="Projekt.Okna.Gry"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt.Okna"
+        xmlns:Projekt="clr-namespace:Projekt" x:Class="Projekt.Okna.Gry"
         mc:Ignorable="d"
-        Title="Gry" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name="DataGridGry" HorizontalAlignment="Left" Height="178" Margin="10,10,0,0" VerticalAlignment="Top" Width="774" SelectionChanged="DataGridGry_SelectionChanged" Loaded="DataGridGry_Loaded"/>
-        <Button x:Name="Dodaj" Content="Button" HorizontalAlignment="Left" Margin="185,301,0,0" VerticalAlignment="Top" Width="135" Height="50" Click="Dodaj_Click"/>
+        Title="Gry" Height="608.719" Width="1129.214">
+    <Window.Resources>
+        <Projekt:Wypozyczalnia_Gier_komputerowychDataSet x:Key="wypozyczalnia_Gier_komputerowychDataSet"/>
+        <CollectionViewSource x:Key="klienciViewSource" Source="{Binding Klienci, Source={StaticResource wypozyczalnia_Gier_komputerowychDataSet}}"/>
+        <CollectionViewSource x:Key="gryViewSource" Source="{Binding Gry, Source={StaticResource wypozyczalnia_Gier_komputerowychDataSet}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource klienciViewSource}" Margin="0,0,3.6,2.2">
+        <DataGrid x:Name="DataGridGry" HorizontalAlignment="Left" Height="192" Margin="292,82,0,0" VerticalAlignment="Top" Width="774" SelectionChanged="DataGridGry_SelectionChanged" Loaded="DataGridGry_Loaded"/>
+        <Button x:Name="Dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="83,305,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="Dodaj_Click"/>
+        <Button x:Name="usun" Content="Usuń" HorizontalAlignment="Left" Margin="83,400,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="usun_Click"/>
+        <Grid x:Name="grid1" DataContext="{StaticResource gryViewSource}" HorizontalAlignment="Left" Margin="15,82,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="ID gry:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="iD_gryTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding ID_gry, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Nazwa:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
+            <TextBox x:Name="nazwaTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding Nazwa, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Kategoria:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
+            <TextBox x:Name="kategoriaTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding Kategoria, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Kategoria wiekowa:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
+            <TextBox x:Name="kategoria_wiekowaTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" Text="{Binding Kategoria_wiekowa, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Data wydania:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
+            <TextBox x:Name="data_wydaniaTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="4" Text="{Binding Data_wydania, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Cena dzien:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="5" VerticalAlignment="Center"/>
+            <TextBox x:Name="cena_dzienTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="5" Text="{Binding Cena_dzien, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
+        <Button x:Name="uaktualnij" Content="Uaktualnij" HorizontalAlignment="Left" Margin="83,482,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="uaktualnij_Click"/>
 
     </Grid>
 </Window>
