@@ -13,17 +13,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 
 namespace Projekt.Okna
 {
     /// <summary>
     /// Logika interakcji dla klasy Gry.xaml
     /// </summary>
+    /// 
+    //Pobieranie danych z servera bazy.
+    //Wyświetlenie zawartości bazy w DataGrid.
+    //Pierwszy przycisk dodaje dane do bazy, drugi usuwa dane a trzeci aktualizuje po ID.
     public partial class Gry : Window
     {  //łącznie z baza danych
         public String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
         public SqlConnection connection;
+        ////Ładowanie skompilowana strone składnika
         public Gry()
         {
             InitializeComponent();
@@ -55,11 +60,11 @@ namespace Projekt.Okna
             DataGridGry.ItemsSource = dt.DefaultView;
             dr.Close();
         }
-
+        //Przycisk dodania do wiersza do bazy danych
         private void Dodaj_Click(object sender, RoutedEventArgs e)
         {
             String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
-            string Query = "insert into Gry (ID_gry, Nazwa, Kategoria, Kategoria_wiekowa, Data_wydania, Cena_dzien) values('" + this.iD_gryTextBox.Text + "','" + this.nazwaTextBox.Text + "','" + this.kategoriaTextBox.Text + "','" + this.kategoria_wiekowaTextBox.Text + "','" + this.data_wydaniaTextBox.Text + "','" + this.cena_dzienTextBox.Text + "');" ;
+            string Query = "insert into Gry (ID_gry, Nazwa, Kategoria, Kategoria_wiekowa, Data_wydania, Cena_dzien) values('" + this.iD_gryTextBox.Text + "','" + this.nazwaTextBox.Text + "','" + this.kategoriaTextBox.Text + "','" + this.kategoria_wiekowaTextBox.Text + "','" + this.data_wydaniaTextBox.Text + "','" + this.cena_dzienTextBox.Text + "');";
             SqlConnection conDataBase = new SqlConnection(connection_String);
             SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
             SqlDataReader myReader;
@@ -69,15 +74,17 @@ namespace Projekt.Okna
                 myReader = cmdDataBase.ExecuteReader();
                 System.Windows.MessageBox.Show("Zapisano");
                 while (myReader.Read()) { }
+                
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-               System.Windows.MessageBox.Show(ex.Message);
+                System.Windows.MessageBox.Show(ex.Message);
             }
-                }
+            
+            }
      
         
-
+        //Przycisk do usunięcia wiersza o danym ID_gry z bazy danych
         private void usun_Click(object sender, RoutedEventArgs e)
         {
             String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
@@ -96,9 +103,10 @@ namespace Projekt.Okna
             {
                 System.Windows.MessageBox.Show(ex.Message);
             }
+            
 
         }
-
+        //Przycisk zakutalizowania wiersza bazy danych
         private void uaktualnij_Click(object sender, RoutedEventArgs e)
         {
             String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
@@ -117,6 +125,7 @@ namespace Projekt.Okna
             {
                 System.Windows.MessageBox.Show(ex.Message);
             }
+
         }
     }
 }

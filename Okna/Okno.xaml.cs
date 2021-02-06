@@ -19,10 +19,15 @@ namespace Projekt
     /// <summary>
     /// Logika interakcji dla klasy Okno.xaml
     /// </summary>
+     
+    //Łaczymy sie z baza danych i za pomaca przycisków prznosimy sie do poszczególnych okien.
+    //
     public partial class Okno : Window
     {   //łączenie z baza danych
         private const String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
         private SqlConnection connection;
+
+        //Ładowanie skompilowana strone składnika
         public Okno()
         {
             InitializeComponent();
@@ -46,7 +51,7 @@ namespace Projekt
             }
             catch (SqlException)
             {
-                MessageBox.Show("Błąd logowania");
+                MessageBox.Show("Błąd");
             }
             connection.Close();
 
@@ -62,14 +67,14 @@ namespace Projekt
                 connection.Open();
                 var w = Application.Current.Windows[1];
                 w.Hide();
-                //przejscie do kolejnego okna
+                
                 Okna.Gry signIn = new Okna.Gry();
                 signIn.ShowDialog();
                 w.Show();
             }
             catch (SqlException)
             {
-                MessageBox.Show("Błąd logowania");
+                MessageBox.Show("Błąd");
             }
             connection.Close();
 
@@ -85,14 +90,14 @@ namespace Projekt
                 connection.Open();
                 var w = Application.Current.Windows[1];
                 w.Hide();
-                //przejscie do kolejnego okna
+                
                 Okna.Klienci signIn = new Okna.Klienci();
                 signIn.ShowDialog();
                 w.Show();
             }
             catch (SqlException)
             {
-                MessageBox.Show("Błąd logowania");
+                MessageBox.Show("Błąd");
             }
             connection.Close();
 
@@ -108,14 +113,14 @@ namespace Projekt
                 connection.Open();
                 var w = Application.Current.Windows[1];
                 w.Hide();
-                //przejscie do kolejnego okna
+                
                 Okna.Wypozyczenia signIn = new Okna.Wypozyczenia();
                 signIn.ShowDialog();
                 w.Show();
             }
-            catch (SqlException)
-            {
-                MessageBox.Show("Błąd logowania");
+            catch (SqlException) { 
+           
+                MessageBox.Show("Błąd");
             }
             connection.Close();
 
@@ -131,14 +136,14 @@ namespace Projekt
                 connection.Open();
                 var w = Application.Current.Windows[1];
                 w.Hide();
-                //przejscie do kolejnego okna
+                
                 Okna.Zwroty signIn = new Okna.Zwroty();
                 signIn.ShowDialog();
                 w.Show();
             }
             catch (SqlException)
             {
-                MessageBox.Show("Błąd logowania");
+                MessageBox.Show("Błąd");
             }
             connection.Close();
 

@@ -19,12 +19,19 @@ namespace Projekt.Okna
     /// <summary>
     /// Logika interakcji dla klasy Klienci.xaml
     /// </summary>
+    /// 
+
+    //Łączenie z serverm i baza danych.
+    //Wyswietlenie bazy danych w DataGrid.
+    //Trzy przyciski kolejno od dodawania rekordów w bazie, usuwania oraz aktualizowania.
     public partial class Klienci : Window
     {
 
         //łączenie z baza danych
         public String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
         public SqlConnection connection;
+
+        ////Ładowanie skompilowana strone składnika
         public Klienci()
         {
             InitializeComponent();

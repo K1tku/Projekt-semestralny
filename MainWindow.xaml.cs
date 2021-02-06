@@ -36,7 +36,8 @@ namespace Projekt
             pobierzDane();
             
         }
-        
+        //Pobieramy dane z servera i sprawdzamy czy zgadzaj sie z wpisanymi hasłami jeśli nie to wyłąpujemy błąd.
+        //po kliknieciu przenosi nas do kolejnego okna.
         public void pobierzDane()
         {
             //pobierz dane logowania z formularza i przypisz

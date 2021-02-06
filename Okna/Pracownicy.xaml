@@ -11,7 +11,7 @@
         <Projekt:Wypozyczalnia_Gier_komputerowychDataSet x:Key="wypozyczalnia_Gier_komputerowychDataSet"/>
         <CollectionViewSource x:Key="pracownicyViewSource" Source="{Binding Pracownicy, Source={StaticResource wypozyczalnia_Gier_komputerowychDataSet}}"/>
     </Window.Resources>
-    <Grid>
+    <Grid Background="#FFFFF0D3" Width="1059">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="6*"/>
             <ColumnDefinition Width="787*"/>

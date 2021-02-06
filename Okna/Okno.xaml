@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Projekt"
         mc:Ignorable="d"
         Title="Okno" Height="486.003" Width="583.875">
-    <Grid Background="#FFE9EEFF">
+    <Grid Background="#FFFFF0D3">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="199*"/>
             <ColumnDefinition Width="362*"/>

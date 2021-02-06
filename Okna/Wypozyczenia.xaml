@@ -11,7 +11,7 @@
         <Projekt:Wypozyczalnia_Gier_komputerowychDataSet x:Key="wypozyczalnia_Gier_komputerowychDataSet"/>
         <CollectionViewSource x:Key="wypozyczeniaViewSource" Source="{Binding Wypozyczenia, Source={StaticResource wypozyczalnia_Gier_komputerowychDataSet}}"/>
     </Window.Resources>
-    <Grid>
+    <Grid Background="#FFFFF0D3">
         <DataGrid x:Name="DataGridWy" HorizontalAlignment="Left" Height="150" Margin="285,53,0,0" VerticalAlignment="Top" Width="779" RenderTransformOrigin="0.5,0.5" SelectionChanged="DataGridWy_SelectionChanged" Loaded="DataGridWy_Loaded">
             <DataGrid.RenderTransform>
                 <TransformGroup>

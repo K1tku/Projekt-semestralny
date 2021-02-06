@@ -11,7 +11,7 @@
         <Projekt:Wypozyczalnia_Gier_komputerowychDataSet x:Key="wypozyczalnia_Gier_komputerowychDataSet"/>
         <CollectionViewSource x:Key="klienciViewSource" Source="{Binding Klienci, Source={StaticResource wypozyczalnia_Gier_komputerowychDataSet}}"/>
     </Window.Resources>
-    <Grid Margin="0,0,3.6,12">
+    <Grid Margin="0,0,3.6,12" Background="#FFFFF0D3">
         <DataGrid x:Name="DataGridKli" HorizontalAlignment="Left" Height="177" Margin="278,63,0,0" VerticalAlignment="Top" Width="774" Loaded="DataGridKli_Loaded" SelectionChanged="DataGridKli_SelectionChanged"/>
         <Button x:Name="dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="51,302,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="dodaj_Click"/>
         <Button x:Name="Uaktualnij" Content="Uaktualnij" HorizontalAlignment="Left" Margin="51,463,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="uaktualnij_Click"/>
