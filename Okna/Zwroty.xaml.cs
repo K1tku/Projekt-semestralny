@@ -76,6 +76,7 @@ namespace Projekt.Okna
             {
                 System.Windows.MessageBox.Show(ex.Message);
             }
+            updateDataGrid();
 
         }
 
@@ -99,6 +100,7 @@ namespace Projekt.Okna
             {
                 System.Windows.MessageBox.Show(ex.Message);
             }
+            updateDataGrid();
         }
 
         private void uaktualnij_Click(object sender, RoutedEventArgs e)
@@ -119,6 +121,7 @@ namespace Projekt.Okna
             {
                 System.Windows.MessageBox.Show(ex.Message);
             }
+            updateDataGrid();
 
         }
     }

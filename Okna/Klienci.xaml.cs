@@ -80,6 +80,7 @@ namespace Projekt.Okna
             {
                 System.Windows.MessageBox.Show(ex.Message);
             }
+            updateDataGrid();
         }
 
        
@@ -102,6 +103,7 @@ namespace Projekt.Okna
             {
                 System.Windows.MessageBox.Show(ex.Message);
             }
+            updateDataGrid();
 
         }
 
@@ -123,6 +125,7 @@ namespace Projekt.Okna
             {
                 System.Windows.MessageBox.Show(ex.Message);
             }
+            updateDataGrid();
 
         }
 

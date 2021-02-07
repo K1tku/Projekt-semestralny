@@ -77,6 +77,7 @@ namespace Projekt.Okna
             {
                 System.Windows.MessageBox.Show(ex.Message);
             }
+            updateDataGrid();
         }
 
         
@@ -99,6 +100,7 @@ namespace Projekt.Okna
             {
                 System.Windows.MessageBox.Show(ex.Message);
             }
+            updateDataGrid();
 
         }
 
@@ -120,6 +122,7 @@ namespace Projekt.Okna
             {
                 System.Windows.MessageBox.Show(ex.Message);
             }
+            updateDataGrid();
         }
 
         private void Pracownicy1_Loaded(object sender, RoutedEventArgs e)

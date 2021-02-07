@@ -80,6 +80,7 @@ namespace Projekt.Okna
             {
                 System.Windows.MessageBox.Show(ex.Message);
             }
+            updateDataGrid();
             
             }
      
@@ -103,7 +104,8 @@ namespace Projekt.Okna
             {
                 System.Windows.MessageBox.Show(ex.Message);
             }
-            
+            updateDataGrid();
+
 
         }
         //Przycisk zakutalizowania wiersza bazy danych
@@ -125,6 +127,7 @@ namespace Projekt.Okna
             {
                 System.Windows.MessageBox.Show(ex.Message);
             }
+            updateDataGrid();
 
         }
     }
