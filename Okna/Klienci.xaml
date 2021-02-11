@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Projekt.Okna"
         xmlns:Projekt="clr-namespace:Projekt" x:Class="Projekt.Okna.Klienci"
         mc:Ignorable="d"
-        Title="Klienci" Height="582" Width="1072.4" Loaded="Window_Loaded">
+        Title="Klienci" Height="582" Width="1072.4">
     <Window.Resources>
         <Projekt:Wypozyczalnia_Gier_komputerowychDataSet x:Key="wypozyczalnia_Gier_komputerowychDataSet"/>
         <CollectionViewSource x:Key="klienciViewSource" Source="{Binding Klienci, Source={StaticResource wypozyczalnia_Gier_komputerowychDataSet}}"/>

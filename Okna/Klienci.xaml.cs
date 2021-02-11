@@ -129,15 +129,6 @@ namespace Projekt.Okna
 
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
-            Projekt.Wypozyczalnia_Gier_komputerowychDataSet wypozyczalnia_Gier_komputerowychDataSet = ((Projekt.Wypozyczalnia_Gier_komputerowychDataSet)(this.FindResource("wypozyczalnia_Gier_komputerowychDataSet")));
-            // Załaduj dane do tabeli Klienci. Możesz modyfikować ten kod w razie potrzeby.
-            Projekt.Wypozyczalnia_Gier_komputerowychDataSetTableAdapters.KlienciTableAdapter wypozyczalnia_Gier_komputerowychDataSetKlienciTableAdapter = new Projekt.Wypozyczalnia_Gier_komputerowychDataSetTableAdapters.KlienciTableAdapter();
-            wypozyczalnia_Gier_komputerowychDataSetKlienciTableAdapter.Fill(wypozyczalnia_Gier_komputerowychDataSet.Klienci);
-            System.Windows.Data.CollectionViewSource klienciViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("klienciViewSource")));
-            klienciViewSource.View.MoveCurrentToFirst();
-        }
+       
     }
 }
