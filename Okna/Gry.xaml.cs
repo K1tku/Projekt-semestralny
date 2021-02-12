@@ -26,7 +26,8 @@ namespace Projekt.Okna
     //Pierwszy przycisk dodaje dane do bazy, drugi usuwa dane a trzeci aktualizuje po ID.
     public partial class Gry : Window
     {  //łącznie z baza danych
-        public String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
+        //public String connection_String = "Data Source=LAPTOP-VSA1L11T;Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
+        public String connection_String = "Data Source=Database1.mdf";
         public SqlConnection connection;
         ////Ładowanie skompilowana strone składnika
         public Gry()
@@ -63,7 +64,7 @@ namespace Projekt.Okna
         //Przycisk dodania do wiersza do bazy danych
         private void Dodaj_Click(object sender, RoutedEventArgs e)
         {
-            String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
+            //String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
             string Query = "insert into Gry (ID_gry, Nazwa, Kategoria, Kategoria_wiekowa, Data_wydania, Cena_dzien) values('" + this.iD_gryTextBox.Text + "','" + this.nazwaTextBox.Text + "','" + this.kategoriaTextBox.Text + "','" + this.kategoria_wiekowaTextBox.Text + "','" + this.data_wydaniaTextBox.Text + "','" + this.cena_dzienTextBox.Text + "');";
             SqlConnection conDataBase = new SqlConnection(connection_String);
             SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
@@ -88,7 +89,7 @@ namespace Projekt.Okna
         //Przycisk do usunięcia wiersza o danym ID_gry z bazy danych
         private void usun_Click(object sender, RoutedEventArgs e)
         {
-            String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
+            //String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
             string Query = "delete from Gry where ID_gry='" + this.iD_gryTextBox.Text + "';";
             SqlConnection conDataBase = new SqlConnection(connection_String);
             SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
@@ -111,7 +112,7 @@ namespace Projekt.Okna
         //Przycisk zakutalizowania wiersza bazy danych
         private void uaktualnij_Click(object sender, RoutedEventArgs e)
         {
-            String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
+           // String connection_String = "Data Source = LAPTOP-VSA1L11T; Initial Catalog = Wypozyczalnia_Gier_komputerowych;USER ID=user;PASSWORD=user";
             string Query = "update Gry set ID_gry='" + this.iD_gryTextBox.Text + "', Nazwa='" + this.nazwaTextBox.Text + "',Kategoria='" + this.kategoriaTextBox.Text + "',Kategoria_wiekowa='" + this.kategoria_wiekowaTextBox.Text + "',Data_wydania='" + this.data_wydaniaTextBox.Text + "',Cena_dzien='" + this.cena_dzienTextBox.Text + "'where ID_gry='" + this.iD_gryTextBox.Text + "'; ";
             SqlConnection conDataBase = new SqlConnection(connection_String);
             SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
